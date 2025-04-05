@@ -1,8 +1,7 @@
-// pages/api/search.js
 import axios from "axios";
 
 export default async function handler(req, res) {
-  const { query } = req.query; // ✅ FIXED LINE
+  const { query } = req.query; 
   const apiKey = process.env.TMDB_API_KEY;
 
   if (!query) {
