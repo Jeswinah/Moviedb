@@ -9,12 +9,9 @@ const Page = () => {
   const [movies, setMovies] = useState([]);
   const { search } = useParams();
 
-  const apikey = "05054a63901c71f0817eb0028ead81f3";
-  const api = `https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${search}`;
-
   async function apihandler() {
     try {
-      const response = await axios.get(api);
+      const response = await axios.get(`/api/search?query=${search}`);
       setMovies(response.data.results);
     } catch (error) {
       console.error("Error fetching movies:", error);
