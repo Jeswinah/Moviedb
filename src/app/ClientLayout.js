@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Searchitems from "@/components/Searchitems";
+import Footer from "@/components/Footer";
 
 const ClientLayout = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,15 +14,16 @@ const ClientLayout = ({ children }) => {
 
   if (isLoading) {
     return <Loader />;
+  } else {
+    return (
+      <>
+        <Navbar />
+        <Searchitems />
+        {children}
+        <Footer/>
+      </>
+    );
   }
-
-  return (
-    <>
-      <Navbar />
-      <Searchitems />
-      {children}
-    </>
-  );
 };
 
 export default ClientLayout;
