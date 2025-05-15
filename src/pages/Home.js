@@ -30,12 +30,12 @@ const Home = () => {
   }));
 
   const displayData = loading ? placeholderData : movies;
-console.log(movies);
+
 
   return (
     <div className="grid place-content-center">
       <div className="cards grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mx-4 sm:gap-8 sm:mx-8">
-        {displayData.map(({ id, title, backdrop_path, vote_average}) => {
+        {displayData.map(({ id, title, backdrop_path, vote_average }) => {
           const imgUrl = backdrop_path
             ? `https://image.tmdb.org/t/p/w500/${backdrop_path}`
             : "https://placehold.co/300x168?text=Loading...";
