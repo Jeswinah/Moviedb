@@ -9,7 +9,13 @@ const Searchitems = () => {
   const Handlesearch = () => {
     if (searchval.trim() !== "") {
       router.push(`/search/${encodeURIComponent(searchval)}`);
-      setSearchval('');
+      setSearchval("");
+    }
+  };
+  //For Search if click enter key
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      Handlesearch();
     }
   };
 
@@ -22,6 +28,7 @@ const Searchitems = () => {
             placeholder="Search a movie"
             className="bg-gray-100 border-gray-400 rounded-2xl px-3 py-2 border outline-0 w-full"
             onChange={(e) => setSearchval(e.target.value)}
+            onKeyDown={handleKeyDown}
             value={searchval}
           />
           <button
