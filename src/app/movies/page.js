@@ -22,7 +22,7 @@ const Page = () => {
 
   const placeholderData = Array.from({ length: 20 }, (_, i) => ({
     id: `placeholder-${i}`,
-    name: "Loading...",
+    title: "Loading...",
     backdrop_path: null,
     vote_average: "-",
   }));
