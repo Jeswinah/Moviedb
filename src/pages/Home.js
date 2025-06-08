@@ -31,6 +31,7 @@ const Home = () => {
 
   const displayData = loading ? placeholderData : movies;
 
+  console.log(displayData);
 
   return (
     <div className="grid place-content-center">
